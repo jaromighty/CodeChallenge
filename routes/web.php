@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Poll;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,5 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function (Request $request) {
-    return view('app');
+    $polls = Poll::with('responses')->get();
+    $currentIp = strval($request->ip());
+    return view('app', compact(['polls', 'currentIp']));
 });

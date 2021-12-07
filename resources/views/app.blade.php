@@ -19,8 +19,8 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
-        <div id="app">
-            <poll-list></poll-list>
+        <div id="app" class="relative bg-gray-100 min-h-screen">
+            <poll-list :polls="{{$polls}}" current-ip="{{$currentIp}}"></poll-list>
         </div>
     </body>
 </html>
