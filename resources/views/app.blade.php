@@ -20,7 +20,7 @@
     </head>
     <body class="font-sans antialiased">
         <div id="app">
-            <example-component></example-component>
+            <poll-list></poll-list>
         </div>
     </body>
 </html>
