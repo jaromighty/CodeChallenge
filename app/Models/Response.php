@@ -10,6 +10,7 @@ class Response extends Model
     use HasFactory;
 
     protected $fillable = [
+        'poll_id',
         'response',
         'ip_address',
     ];
