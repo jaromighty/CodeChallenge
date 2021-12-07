@@ -12,4 +12,12 @@ class Poll extends Model
     protected $fillable = [
         'name'
     ];
+
+    /**
+     * Get the responses for the poll.
+     */
+    public function responses()
+    {
+        return $this->hasMany(Response::class);
+    }
 }

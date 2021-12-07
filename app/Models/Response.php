@@ -13,4 +13,12 @@ class Response extends Model
         'response',
         'ip_address',
     ];
+
+    /**
+     * Get the poll that owns the response.
+     */
+    public function poll()
+    {
+        return $this->belongsTo(Poll::class);
+    }
 }
