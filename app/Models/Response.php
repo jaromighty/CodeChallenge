@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Response extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'response',
+        'ip_address',
+    ];
 }
