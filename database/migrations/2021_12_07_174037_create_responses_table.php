@@ -17,7 +17,6 @@ class CreateResponsesTable extends Migration
             $table->id();
             $table->foreignId('poll_id')->references('id')->on('polls');
             $table->string('response');
-            $table->ipAddress('ip_address');
             $table->timestamps();
         });
     }
