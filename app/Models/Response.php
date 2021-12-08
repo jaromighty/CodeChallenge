@@ -22,4 +22,12 @@ class Response extends Model
     {
         return $this->belongsTo(Poll::class);
     }
+
+    /**
+     * The users that belong to the response.
+     */
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }
