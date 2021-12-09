@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateResponsesTable extends Migration
+class CreateAnswerResponderTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateResponsesTable extends Migration
      */
     public function up()
     {
-        Schema::create('responses', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('poll_id')->references('id')->on('polls');
-            $table->string('response');
-            $table->timestamps();
+        Schema::create('answer_responder', function (Blueprint $table) {
+            $table->foreignId('answer_id')->references('id')->on('answers');
+            $table->foreignId('responder_id')->references('id')->on('responders');
         });
     }
 
@@ -28,6 +26,6 @@ class CreateResponsesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('responses');
+        Schema::dropIfExists('answer_responder');
     }
 }

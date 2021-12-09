@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Model
+class Responder extends Model
 {
     use HasFactory, Notifiable;
 
@@ -21,9 +21,11 @@ class User extends Model
 
     /**
      * The responses that belong to the user.
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function responses()
+    public function answers()
     {
-        return $this->belongsToMany(Response::class);
+        return $this->belongsToMany(Answer::class);
     }
 }

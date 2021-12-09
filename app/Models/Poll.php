@@ -14,10 +14,22 @@ class Poll extends Model
     ];
 
     /**
-     * Get the responses for the poll.
+     * Get the answers for the poll.
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function responses()
+    public function answers()
     {
-        return $this->hasMany(Response::class);
+        return $this->hasMany(Answer::class);
     }
+
+    /**
+     * Get the responses for the poll.
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     */
+    // public function responses()
+    // {
+    //     return $this->hasManyThrough(Responder::class, Answer::class);
+    // }
 }

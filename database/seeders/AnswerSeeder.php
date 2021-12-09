@@ -2,12 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Poll;
-use App\Models\Response;
-use App\Models\User;
+use App\Models\Answer;
 use Illuminate\Database\Seeder;
 
-class ResponseSeeder extends Seeder
+class AnswerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +14,7 @@ class ResponseSeeder extends Seeder
      */
     public function run()
     {
-        $pollResponses = [
+        $pollAnswers = [
             ['poll_id' => 1, 'responses' => [ 'Pizza', 'Tacos', 'Sushi', 'Falafel' ]],
             ['poll_id' => 2, 'responses' => [ 'Morgan Freeman', 'Steve Carrell', 'Samuel L. Jackson', 'Christopher Walken' ]],
             ['poll_id' => 3, 'responses' => [ 'Elated', 'Peaceful', 'Blessed', 'Happy' ]],
@@ -25,11 +23,11 @@ class ResponseSeeder extends Seeder
             ['poll_id' => 6, 'responses' => [ 'Smell', 'Hearing', 'Touch', 'Taste' ]]
         ];
 
-        foreach ($pollResponses as $poll) {
-            foreach ($poll['responses'] as $response) {
-                Response::create([
-                    'response' => $response,
-                    'poll_id' => $poll['poll_id'],
+        foreach ($pollAnswers as $answers) {
+            foreach ($answers['responses'] as $response) {
+                Answer::create([
+                    'text' => $response,
+                    'poll_id' => $answers['poll_id'],
                 ]);
             }
         }

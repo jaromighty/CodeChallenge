@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\Responder;
 use Illuminate\Database\Seeder;
 
-class UserSeeder extends Seeder
+class ResponderSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
         ];
 
         foreach ($ipAddresses as $ipAddress) {
-            User::create([
+            Responder::create([
                 'ip_address' => $ipAddress,
             ]);
         }

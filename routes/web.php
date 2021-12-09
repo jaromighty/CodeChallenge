@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function (Request $request) {
-    $polls = Poll::with('responses')->get();
+    $polls = Poll::with('answers.responders')->get();
     $currentIp = strval($request->ip());
     return view('app', compact(['polls', 'currentIp']));
 });
