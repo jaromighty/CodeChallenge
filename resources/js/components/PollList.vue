@@ -12,7 +12,7 @@
                                 <h3 class="text-gray-900 text-sm font-medium">{{ poll.name }}</h3>
                             </div>
                             <div class="mt-2">
-
+                                <poll-answers :answers="poll.answers" :current-ip="currentIp" />
                             </div>
                         </div>
                     </div>
@@ -23,10 +23,18 @@
 </template>
 
 <script>
+    import PollAnswers from './PollAnswers.vue';
+    
     export default {
         props: {
             'polls': Array,
             'currentIp': String,
+        },
+        components: {
+            PollAnswers,
+        },
+        mounted() {
+            console.log(this.polls)
         },
     }
 </script>
